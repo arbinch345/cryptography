@@ -129,26 +129,34 @@ AES-GCM works in two major phases:
 └─────────────────────┘
 ```
 
-# 🔄 Sequence Diagram
+## 🔄 Sequence Diagram — Encryption Process
 
-## Encryption Process
+```mermaid
+sequenceDiagram
+    participant User
+    participant Program
+    participant AES_GCM
 
-```text id="e9vx4p"
-User -> Program: Enter plaintext
-Program -> Program: Generate Random Nonce
-Program -> AES-GCM: Encrypt Plaintext
-AES-GCM -> Program: Ciphertext + Auth Tag
-Program -> User: Base64(Ciphertext + Nonce + Tag)
+    User->>Program: Enter plaintext
+    Program->>Program: Generate Random Nonce
+    Program->>AES_GCM: Encrypt Plaintext
+    AES_GCM-->>Program: Ciphertext + Auth Tag
+    Program-->>User: Base64(Ciphertext + Nonce + Tag)
 ```
 
-## Decryption Process
+## 🔄 Sequence Diagram — Decryption Process
 
-```text id="t2lq9n"
-User -> Program: Provide Ciphertext + Nonce + Tag
-Program -> AES-GCM: Verify Authentication Tag
-AES-GCM -> Program: Tag Verification Success
-Program -> AES-GCM: Decrypt Ciphertext
-AES-GCM -> User: Original Plaintext
+```mermaid
+sequenceDiagram
+    participant User
+    participant Program
+    participant AES_GCM
+
+    User->>Program: Provide Ciphertext + Nonce + Tag
+    Program->>AES_GCM: Verify Authentication Tag
+    AES_GCM-->>Program: Tag Verification Success
+    Program->>AES_GCM: Decrypt Ciphertext
+    AES_GCM-->>User: Original Plaintext
 ```
 
 # 🧠 Authentication Tag Explained
