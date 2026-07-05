@@ -29,8 +29,6 @@ This implementation includes:
 * Base64 Encoding
 * Interactive Command-Line Interface
 
----
-
 # 📖 What is GCM Mode?
 
 ## GCM (Galois/Counter Mode)
@@ -49,8 +47,6 @@ to provide both:
 | Confidentiality   | Keeps data secret          |
 | Integrity         | Detects data modification  |
 | Authentication    | Verifies data authenticity |
-
----
 
 # ⚙️ Working of AES-GCM
 
@@ -76,7 +72,6 @@ AES-GCM works in two major phases:
 
   * raise authentication error
 
----
 
 # 📊 AES-GCM Encryption Workflow
 
@@ -107,8 +102,6 @@ AES-GCM works in two major phases:
 └────────────────────────────────┘
 ```
 
----
-
 # 📊 AES-GCM Decryption Workflow
 
 ```text id="m84xpa"
@@ -136,8 +129,6 @@ AES-GCM works in two major phases:
 └─────────────────────┘
 ```
 
----
-
 # 🔄 Sequence Diagram
 
 ## Encryption Process
@@ -150,8 +141,6 @@ AES-GCM -> Program: Ciphertext + Auth Tag
 Program -> User: Base64(Ciphertext + Nonce + Tag)
 ```
 
----
-
 ## Decryption Process
 
 ```text id="t2lq9n"
@@ -161,8 +150,6 @@ AES-GCM -> Program: Tag Verification Success
 Program -> AES-GCM: Decrypt Ciphertext
 AES-GCM -> User: Original Plaintext
 ```
-
----
 
 # 🧠 Authentication Tag Explained
 
@@ -182,7 +169,6 @@ decrypt_and_verify()
 
 will throw an authentication error.
 
----
 
 # 🔐 AES-GCM Architecture Diagram
 
@@ -216,8 +202,6 @@ will throw an authentication error.
              └───────────────────────┘
 ```
 
----
-
 # 📂 Project Structure
 
 ```text id="p3fw7n"
@@ -248,8 +232,6 @@ Enter tag: A2bD8m...
 
 Decrypted msg: Hello World
 ```
-
----
 
 # 📜 Code Explanation
 
@@ -310,8 +292,6 @@ Key + Nonce
 
 combination multiple times can completely break AES-GCM security.
 
----
-
 ## Store These Values Safely
 
 You must preserve:
@@ -322,8 +302,6 @@ You must preserve:
 
 for successful decryption.
 
----
-
 # 📈 Advantages of AES-GCM
 
 ✅ Authenticated Encryption
@@ -333,15 +311,11 @@ for successful decryption.
 ✅ No Padding Required
 ✅ Modern Industry Standard
 
----
-
 # ⚠️ Limitations
 
 ❌ Nonce reuse is dangerous
 ❌ Slightly more complex than CBC/CTR
 ❌ Authentication tag must be preserved
-
----
 
 # 📚 Real-World Applications
 
