@@ -172,15 +172,3 @@ This repository is intended for **educational and learning purposes only**.
 Do not use these implementations directly in production systems without proper security review.
 
 ---
-
-# 🤝 Contributing
-
-Contributions are welcome.
-
-Feel free to:
-
-* Fork the repository
-* Create a new branch
-* Improve implementations
-* Add new cryptographic algorithms or modes
-* Submit a pull request
