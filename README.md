@@ -150,7 +150,6 @@ This repository also contains implementations of different block cipher modes us
 
 ```bash
 git clone https://github.com/arbinch345/cryptography.git
-cd cryptography
 ```
 
 ---
